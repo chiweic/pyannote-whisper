@@ -97,7 +97,7 @@ def cli():
 
     from dotenv import load_dotenv
     load_dotenv()
-
+    
     diarization = args.pop("diarization")
     if diarization:
         from pyannote.audio import Pipeline        
