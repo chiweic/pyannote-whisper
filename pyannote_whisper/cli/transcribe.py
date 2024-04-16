@@ -95,10 +95,13 @@ def cli():
     from whisper import load_model
     model = load_model(model_name, device=device, download_root=model_dir)
 
+    from dotenv import load_dotenv
+    load_dotenv()
+
     diarization = args.pop("diarization")
     if diarization:
-        from pyannote.audio import Pipeline
-        AUTH_TOKEN=''
+        from pyannote.audio import Pipeline        
+        AUTH_TOKEN=os.getenv('AUTH_TOKEN')
         # update to current working version of pipeline
         pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1",
                                             use_auth_token=AUTH_TOKEN).to(torch.device('cuda'))
