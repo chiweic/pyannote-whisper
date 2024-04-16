@@ -98,9 +98,10 @@ def cli():
     diarization = args.pop("diarization")
     if diarization:
         from pyannote.audio import Pipeline
+        AUTH_TOKEN=''
         # update to current working version of pipeline
         pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1",
-                                            use_auth_token="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").to(torch.device('cuda'))
+                                            use_auth_token=AUTH_TOKEN).to(torch.device('cuda'))
 
     for audio_path in args.pop("audio"):
         result = transcribe(model, audio_path, temperature=temperature,**args)
