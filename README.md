@@ -105,3 +105,4 @@ Speaker 02 believes that procurement processes need to be rethought to improve f
 Speaker 03 advises understanding the purpose of digitization and collaborating with colleagues for a better outcome. 
 Speaker 04 suggests thinking big and being brave, as well as talking to technology vendors to achieve desired outcomes.
 ```
+# additional notes: move the key to .env
